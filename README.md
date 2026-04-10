@@ -15,23 +15,25 @@ This project grew out of an off-grid storage container that used to be the back 
 
 That container gradually picked up:
 
-- solar charging
-- battery-backed lights
-- a ceiling fan
-- USB-C PD drop-down power
-- OpenWrt Wi-Fi
-- a Google Nest speaker
-- a Phomemo label printer
+- Used 225w solar panel operating at 48v - $30 on OfferUp 
+- solar charging with Victron 75/15 charge controller
+- 12v/156wh Motorcycle battery - allows for higher amperage draws, 156wh lasts all night with power to spare. I just had it laying around. 
+- 12v RV lights
+- 12v camping ceiling fan - $15 on Amazon - I snipped off the remote control and run this at full speed directly from a regular rocker switch. 
+- USB-C PD drop-down power offering multiple voltages through trigger cables up to 20v and 65w - the was the most efficient way to bypass DC adapters and buck converters for electronics
+- Cudy WR3000 OpenWrt Wi-Fi that averages around 5w of draw 
+- a Google Nest speaker through PD Trigger cable fixed at 15v
+- a Phomemo M100 label printer that can be recharged with usb-a to usb-c cable
 - an ESP32 running the local monitor and management software
 
 That is the real reason this repo exists. The useful discovery was that an ESP32 is a very good low-power "glue computer" for small off-grid installs:
 
-- it can keep an eye on the solar and battery state
+- it can report solar and battery state over wifi
 - it can host a local UI instead of depending on cloud dashboards
 - it can integrate odd little tools like a BLE label printer
 - it can replace proprietary phone-only utilities with something local and hackable
 
-This project is not arguing that every container needs all of this. It is showing that once you already have an off-grid power system, the ESP32 is a surprisingly capable place to centralize monitoring and a few practical utilities simply because you can.
+This project is not arguing that every container needs all of this. It is showing that once you already have an off-grid power system, the ESP32 is a surprisingly capable place to centralize monitoring and a few practical utilities simply because you can. This project can expand to all kinds of off-grid shops, sheds, tiny homes, and remote solar wifi access point/repeaters. 
 
 ## Why This Repo Exists
 
