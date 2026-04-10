@@ -134,12 +134,12 @@ pio device monitor -b 115200
 
 ## Repo Pointers
 
-- [platformio.ini](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\platformio.ini): build targets
-- [src/main.cpp](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\src\main.cpp): APIs, BLE, Wi-Fi, printer flow, Victron flow
-- [src/web_pages.cpp](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\src\web_pages.cpp): embedded UI
-- [src/label_engine.cpp](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\src\label_engine.cpp): standard and creative standard label rendering
-- [src/ble_smoke_test.cpp](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\src\ble_smoke_test.cpp): M100 reverse-engineering console
-- [openwrt/Network-ESP32-BLE-Printer](C:\Users\patri\OneDrive\Documents\ESP32\Pack%20Rat\openwrt\Network-ESP32-BLE-Printer): OpenWrt bridge work
+- [platformio.ini](platformio.ini): build targets
+- [src/main.cpp](src/main.cpp): APIs, BLE, Wi-Fi, printer flow, Victron flow
+- [src/web_pages.cpp](src/web_pages.cpp): embedded UI
+- [src/label_engine.cpp](src/label_engine.cpp): standard and creative standard label rendering
+- [src/ble_smoke_test.cpp](src/ble_smoke_test.cpp): M100 reverse-engineering console
+- [openwrt/Network-ESP32-BLE-Printer](openwrt/Network-ESP32-BLE-Printer): OpenWrt bridge work
 
 ## License
 
