@@ -1,0 +1,26 @@
+ESP-ROM:esp32s3-20210327
+
+>>> help
+
+>>> disconnect
+
+>>> target 63:26:ab:63:ab:5f public
+
+>>> connect
+
+>>> subscribe ff03
+
+>>> paper 0A
+
+>>> location 20
+
+>>> rows 240
+
+>>> sequence legacyffbarehold
+
+>>> sequence legacy00barehold
+
+>>> sequence legacyinkbarehold
+
+>>> disconnect
+

@@ -1,0 +1,286 @@
+[   203][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+t checker
+  write ff02 nr 1F 11 50
+  repeat 10 80 ff02 nr 1F 11 50
+  sweep1f 10 90 00 150
+  sequence seekprint
+  combo 0A 20 seeksolid00
+  combo 0A 20 seeklegacyff
+  sequence legacyinkraw
+  sequence legacyinkhold
+  sequence legacyinkbare
+
+m100> 
+>>> disconnect
+Disconnected.
+
+m100> 
+>>> target 63:26:ab:63:ab:5f public
+Target set to 63:26:ab:63:ab:5f (public)
+
+m100> 
+>>> connect
+I NimBLEClient: mtu update: mtu=200
+I NimBLEClient: Found 2 services
+I NimBLEClient: Connection parameters updated.
+Connected to 63:26:ab:63:ab:5f using public mode. RSSI=-8 dBm MTU=200
+Connect complete. Run 'subscribe ff03' if you want live notifications.
+
+m100> 
+>>> subscribe ff03
+I NimBLERemoteValueAttribute: Write complete; status=0
+Subscribed to ff03
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 02 B6 00
+
+m100> I NimBLEClient: Connection parameters updated.
+
+>>> paper 0A
+Paper mode set to 0x0A
+
+m100> 
+>>> location 20
+Location mode set to 0x20
+
+m100> 
+>>> rows 96
+Test rows set to 96
+
+m100> 
+>>> text TEST
+text-TEST bare-raster-header (no-rsp): 8 bytes
+
+FF03 notify: 01 01
+
+m100> text-TEST bare-raster (no-rsp): 4608 bytes
+
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF0100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+F
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 no
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 0> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> text-TEST bare footer skipped
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+>>> compact checker
+compact-checker bare-raster-header (no-rsp): 8 bytes
+
+FF03 notify: 01 01
+
+m100> compact-checker bare-raster (no-rsp): 4608 bytes
+
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 not
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> compact-checker bare footer skipped
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 1A 0F 0C
+
+m100> 
+>>> compact bar
+compact-bar bare-raster-header (no-rsp): 8 bytes
+
+FF03 notify: 01 01
+
+m100> compact-bar bare-raster (no-rsp): 4608 bytes
+
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+ 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> compact-bar bare footer skipped
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+FF03 notify: 01 01
+
+m100> 
+
+>>> disconnect
+I NimBLERemoteValueAttribute: Write complete; status=0
+Disconnected.
+
+m100> 

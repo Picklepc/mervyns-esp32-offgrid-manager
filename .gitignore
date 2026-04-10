@@ -1,0 +1,10 @@
+.pio/
+.platformio-local/
+.vscode/
+__pycache__/
+*.pyc
+.tmp-*.tar.gz
+
+openwrt/Network-ESP32-BLE-Printer/.ipk-build/
+openwrt/Network-ESP32-BLE-Printer/.ipk-build-bsdtar/
+openwrt/Network-ESP32-BLE-Printer/dist/
