@@ -20,9 +20,9 @@ That container gradually picked up:
 - 12v/156wh Motorcycle battery - allows for higher amperage draws, 156wh lasts all night with power to spare. I just had it laying around. 
 - 12v RV lights
 - 12v camping ceiling fan - $15 on Amazon - I snipped off the remote control and run this at full speed directly from a regular rocker switch. 
-- USB-C PD drop-down power offering multiple voltages through trigger cables up to 20v and 65w - the was the most efficient way to bypass DC adapters and buck converters for electronics
+- USB-C PD drop-down power offering multiple voltages through trigger cables up to 20v and 65w - this was the most efficient way to bypass DC adapters and buck converters to power different voltages in electronics
 - Cudy WR3000 OpenWrt Wi-Fi that averages around 5w of draw 
-- a Google Nest speaker through PD Trigger cable fixed at 15v
+- a Google Nest Mini audio speaker through PD Trigger cable fixed at 15v
 - a Phomemo M100 label printer that can be recharged with usb-a to usb-c cable
 - an ESP32 running the local monitor and management software
 
@@ -32,14 +32,17 @@ That is the real reason this repo exists. The useful discovery was that an ESP32
 - it can host a local UI instead of depending on cloud dashboards
 - it can integrate odd little tools like a BLE label printer
 - it can replace proprietary phone-only utilities with something local and hackable
+- The design is very specific to my use case: the label maker is a garden theme, the Victron monitor is an industrial dashboard, and the admin page is designed to look like an IBM 8086 computer my parents had when I was a kid. 
 
-This project is not arguing that every container needs all of this. It is showing that once you already have an off-grid power system, the ESP32 is a surprisingly capable place to centralize monitoring and a few practical utilities simply because you can. This project can expand to all kinds of off-grid shops, sheds, tiny homes, and remote solar wifi access point/repeaters. 
+This project is not arguing that every container needs all of this. It is showing that once you already have an off-grid power system, the ESP32 is a surprisingly capable place to centralize monitoring and a few practical utilities simply because you can. This project can expand to all kinds of off-grid shops, sheds, tiny homes, and remote solar wifi access point/repeaters. Another interesting feature is interfacing with AI API's, where the ESP32 will call on AI images with prescripted prompts that specify the parameters and return far more creative labels than an esp32 could do alone. 
+
+This project also attempts to make the BLE label maker available as a driverless network printer. The ESP32 did not have enough resources to handle this alone, so OpenWRT is used to handle communication, rendering to the label based on settings on the ESP32 admin page, and delivering the packets to be printed remotely to the ESP32 to process the final print using python. It would be nice to have this managed by the ESP32 alone, but that was a bigger lift. 
 
 ## Why This Repo Exists
 
 This started as a real container-side utility app, then turned into a useful test bed for a few niche but reusable integration problems:
 
-- How do you make a low-cost BLE label printer usable from an ESP32?
+- How do you make a low-cost BLE label printer usable from an ESP32 or as a driverless network printer?
 - How do you keep a label workflow lightweight, fast, and local, while still allowing optional AI image generation?
 - How far can you push an OpenWrt device toward becoming a network printer bridge for a BLE-only printer?
 - What is the smallest useful Victron BLE dashboard you can run locally without dragging in full cloud infrastructure?
@@ -63,6 +66,7 @@ Main hosted pages:
 ## What Works Today
 
 - self-hosted label workflow with standard labels, creative standard variants, AI-generated labels, uploads, export, and direct print
+- AI lables work best through Hugging Face black-forest-labs/FLUX.1-schnell image api, the free account handles around 100 ai generated label designs monthly ($0.10 of inference usage).
 - M100 BLE discovery, targeted connection, and practical printing from the ESP32
 - local settings, hostname-based hosting, and fallback setup AP provisioning
 - Victron SmartSolar live BLE telemetry with a trimmed, live-only power page
