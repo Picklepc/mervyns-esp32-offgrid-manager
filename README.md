@@ -9,6 +9,12 @@
 
 This repo is intentionally being published as a reference project for other people building practical, weird, or "vibe coded" hardware/software hybrids. It is free to use, free to remix, and licensed under MIT.
 
+## Label Maker Preview
+
+The main label maker page is a self-hosted UI running directly from the ESP32. It handles standard labels, creative variations, AI-assisted labels, and direct print to the M100.
+
+![Label Maker Screenshot](label-maker-screenshot.png)
+
 ## Off-Grid Origin Story
 
 This project grew out of an off-grid storage container that used to be the back end of a Mervyn's truck.
